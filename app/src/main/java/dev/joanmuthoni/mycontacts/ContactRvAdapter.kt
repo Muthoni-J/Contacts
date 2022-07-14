@@ -39,8 +39,12 @@ class ContactRvAdapter(var contactsList: List<Contacts>) :
             holder.binding.cvContacts.setOnClickListener {
                 val context = holder.itemView.context
                 val intent = Intent(context,ViewContactsActivity::class.java)
-                intent.putExtra("Name",currentContacts.name)
+                intent.putExtra("NAME",currentContacts.name)
                 intent.putExtra("PHONENUMBER",currentContacts.phone)
+                intent.putExtra("EMAIL",currentContacts.email)
+                intent.putExtra("ADDRESS",currentContacts.address)
+
+
                 context.startActivity(intent)
             }
             holder.binding.imgContacts.setOnClickListener {
